@@ -1,4 +1,5 @@
 import requests
+hero_list = ["Hulk", "Thanos", "Captain America"]
 intel = {}
 name_hero = {}
 def request_(name):
@@ -9,9 +10,9 @@ def request_(name):
   intel[name] = hero_int
   name_hero[hero_int] = name
   return intel
-request_('Hulk')
-request_('Thanos')
-request_('Captain America')
+for hero in hero_list:
+  request_(hero)
 max_int = max(intel.values(), key=lambda i: int(i))
-hero = name_hero[max_int]
-print(hero, max_int)
+smart_hero = name_hero[max_int]
+
+print(smart_hero, max_int)
